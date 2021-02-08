@@ -1,0 +1,57 @@
+{% load static %}
+<html>
+<head>
+    <title>Blood Requests</title>
+    <link rel="icon" href="{%  static 'favicon.ico'%}" type="image/ico">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/requests.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div id="nav">
+    <img src="{% static 'favicon.ico' %}" alt="Logo" style="width:5.5vw;">
+    <label id="title">Blood Requests</label>
+</div>
+<div style="overflow:auto;height:300px; overflow-y:scroll;">
+    <table border="4" id=requests>
+        <tr>
+            <th>Request ID</th>
+            <th>Units Required</th>
+            <th>Blood Group</th>
+            <th>Center ID</th>
+            <th>Date</th>
+        </tr>
+        {% for request in blood_requests%}
+        <tr>
+            <td>{{ request.request_id }}</td>
+            <td>{{ request.units_required }}</td>
+            <td>{{ request.blood_group }}</td>
+            <td>{{ request.dc_id }}</td>
+            <td>{{ request.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<div style="overflow:auto;height:300px; overflow-y:scroll;">
+    <table align="right">
+        <tr><td colspan="5" align="center" style="color: #fff; font-weight: bold; background-color: black;">
+            DONATION CENTER</td></tr>
+        <tr>
+            <td>Center ID</td>
+            <th>Donation center</th>
+            <th>County</th>
+            <th>Contact</th>
+            <th>E-mail</th>
+        </tr>
+        {% for donation in dc%}
+        <tr>
+            <td>{{ donation.username }}</td>
+            <td>{{ donation.donation_center }}</td>
+            <td>{{ donation.county }}</td>
+            <td>{{ donation.contact }}</td>
+            <td>{{ donation.email }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

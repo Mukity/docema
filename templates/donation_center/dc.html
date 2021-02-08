@@ -1,0 +1,51 @@
+{% extends 'donation_center/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h4>Hello {{ user.username }},</h4>
+    <table style="border: 2px solid; width: 40%; font-size: 1.5vw; background-color: lightgoldenrodyellow">
+        <tr style="border: 1px solid">
+            <td >Blood units used by center</td>
+            <td>{{ used }}</td>
+        </tr>
+        <tr style="border: 1px solid">
+            <td>Blood units donated to the center</td>
+            <td>{{ donated }}</td>
+        </tr>
+        <tr style="border: 1px solid">
+            <td>Blood units remaining in the center</td>
+            <td>{{ remaining }}</td>
+        </tr>
+        <tr style="border: 1px solid">
+            <td>Active Blood units requested by center</td>
+            <td>{{ Brequest }}</td>
+        </tr>
+        <tr style="border: 1px solid">
+            <td>Total blood units ever requested by center</td>
+            <td>{{ Trequest }}</td>
+        </tr>
+    </table>
+    {% if percentage_used < 80 %}
+        <a href="/donation_center/send_broadcast_email"><button>Send E-mails Requesting for Blood Donations</button></a>
+    {% endif %}
+    <p>This is the Donation Center view where you can work on different hospital functions.</p>
+    <p>The functions that you can work on include:</p>
+    <ol type="a">
+        <li>Posting blood Request</li>
+        <li>Managing the posted requests</li>
+        <li>Inputting blood transfused into the hospital</li>
+        <li>Inputting blood donated into the hospital</li>
+        <li>Viewing records of blood donated, blood transfused and blood requests</li>
+    </ol>
+    <p>Use the navigation buttons above<br></p>
+    <form method="post" action="/donation_center/success" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+        <p>
+            {{ field.label_tag }}<br>
+            {{ field }}
+        </p>
+        {% endfor %}
+        <button type="submit">Save Event Details</button>
+    </form>
+{% endblock %}}

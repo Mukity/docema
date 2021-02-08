@@ -1,0 +1,73 @@
+body {
+    background-image: url("../images/dc.jpg");
+    font-size: 1.5vw;
+}
+#bar {
+    background-color: #B22222;
+    color: white;
+}
+#topbar{
+    font-size: 2.6vw;
+}
+#navbar{
+    color: white;
+    text-align: left;
+    font-size:2.2vw;
+}
+#navbar a{
+    margin-right: 2.75vw;
+    color: #dddddd;
+    text-decoration: none;
+}
+.column{
+    float: left;
+    width: 50%;
+    margin-top: 10px;
+}
+form {
+    margin-top: 2vw;
+    width: 40vw;
+    border: none;
+    text-align: center;
+}
+nav {
+    width: 100%;
+    background-color: #cc1111;
+    font-weight: bolder;
+    font-size: 2vw;
+}
+button {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    margin-left: 2vw;
+}
+input, label {
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+}
+label {
+    font-family: Gill Sans Extrabold, sans-serif;
+    font-weight: bold;
+}
+table {
+    alignment: left;
+    border-collapse: collapse;
+    font-size: 16px;
+    width: 100%;
+}
+th, td {
+  padding: 0.5vw;
+}
+tbody {
+    overflow-y: auto;
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}

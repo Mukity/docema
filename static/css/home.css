@@ -1,0 +1,56 @@
+body {
+    background-image: url("../images/background.jpg");
+    font-size: 2vw;
+}
+table {
+    font-size: 2vw;
+}
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #B22222;
+    color: white;
+    text-align: center;
+}
+
+label {
+    font-size: 3vw;
+}
+#bar {
+    background-color: #B22222;
+    color: white;
+}
+
+#topbar{
+    font-size: 6vw;
+}
+
+#navbar{
+    color: white;
+    text-align: left;
+    font-size:1.75vw;
+}
+
+#navbar a{
+    margin-right: 2.75vw;
+    color: black;
+    text-decoration: none;
+}
+
+#about {
+    text-indent: 30px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: lightgrey;
+}
+
+form {
+    align: center;
+    display: inline-block;
+}

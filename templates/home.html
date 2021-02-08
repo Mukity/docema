@@ -1,0 +1,84 @@
+{% load static %}
+{% if message %}
+    <script>
+        alert('{{ message }}');
+    </script>
+{% endif %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <link rel="icon" href="{%  static 'favicon.ico'%}" type="image/ico">
+    <title>DOCEMA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<nav id="bar">
+<nav id="topbar">
+    <img src="{% static 'favicon.ico' %}" alt="Logo" style="width:5.5vw;">
+    <label>Donation Center Management Application</label>
+</nav>
+<nav id="navbar">
+    <a class="nav-link" href="#home">About us</a>
+    <a class="nav-link" href="#contact">Contact us</a>
+    <a class="nav-link" href="#feedback">Feedback</a>
+    <a class="nav-link" href="/requests">Blood Requests</a>
+    <a class="nav-link" href="/events">Events</a>
+    <a class="nav-link" href="/donation_center/login">Donation Center</a>
+    <a class="nav-link" href="/donor/login">Donor</a>
+</nav>
+</nav><br>
+<div>
+    <b>Year: {{ year }}</b><br>
+    Blood Requests: {{ requests }}<br>
+    Donations: {{ donations }}<br>
+    Blood Recipients: {{ used }}<br>
+</div>
+<div name="home" id="about">
+    <b><label>Who are we?</label></b>
+  <p>
+    We are a platform that allows Donation centers to:
+      <ul>
+        <li>Enter and monitor the flow of blood in their banks</li>
+        <li>Manage blood requests on this platform</li>
+        <li>Post blood events</li>
+      </ul>
+  </p><br>
+    <b>NOTE: The blood requests on the request tab are posted by the Donation Center</b><br>
+    <p>
+        Donors upon logging in can:
+        <ul>
+            <li>Subscribe to receiving emails on donation requests</li>
+            <li>Update the last donation date and view their donation information</li>
+        </ul>
+    </p>
+</div><br><br><br>
+<a name="contact">
+    <b>For more information and enquiries you can contact us using the following phone or e-mail: </b>
+  <table>
+    <tr><td>Contact Telephone Numbers:</td></tr>
+    <tr><td></td><td>+2542012345678</td></tr>
+    <tr><td></td><td>+2542087654321</td></tr>
+    <tr><td>DOCEMA E-mails: </td></tr>
+    <tr><td></td><td>brema2019.20@gmail.com</td></tr>
+    <tr><td></td><td>docema@mailinator.com</td></tr>
+  </table>
+</a><br><br><br>
+<a name="feedback">
+    <b>For errors and comments please write us a feedback below:</b><br>
+  <form name="feedback" method="post" action="feedback_submitted">
+      {% csrf_token %}
+      <header>Full name</header>
+      <input type="text" name="fullName" required>
+      <header>E-mail</header>
+      <input type="email" name="email" required>
+      <header>Comment</header>
+      <textarea name="comment" required></textarea>
+      <button type="submit" name="submit" style="background-color: #B22222;
+      color: white; padding: 15px 32px; font-size: 1.5vw;">
+          SUBMIT
+      </button>
+  </form>
+</a>
+</body>
+</html>

@@ -1,0 +1,94 @@
+{% if not request.user.is_staff %}
+{% if request.user.is_authenticated  %}
+<!DOCTYPE html>
+{% if message %}
+    <script language="javascript">
+        alert('{{ message }}');
+    </script>
+{% endif %}
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Donor</title>
+    <link rel="icon" href="{%  static 'favicon.ico'%}" type="image/ico">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/donor/donor.css' %}">
+</head>
+<body>
+<nav id="titlebar">
+    <img src="{% static 'favicon.ico' %}" alt="Logo" style="width:4vw;">
+    <label>
+        Donation Center Management Application<br>
+        DONOR<div style="text-align: right"><a href="/donation_center/logged_out">Log out</a> </div>
+    </label>
+</nav>
+Hello {{ user.username }},
+<p>You have set your subscription status to
+{% for subscription in sub %}
+    {% if subscription.subscribe == True %}
+        Yes
+    {% else %}
+        No
+    {% endif %}
+{% endfor %}<br></p>
+        <p>Thank you for choosing to be a blood donor.</p>
+        <p>Did you know?</p>
+        <ul>
+            <li>One blood donation could save up to three lives</li>
+            <li>About 1 in 7 people entering a hospital need blood</li>
+            <li>Giving blood will not decrease your strength</li>
+            <li>The #1 reason blood donors say they give is because they “want to help others.”</li>
+            <li>Blood centers often run short of types O and B red blood cells.</li>
+        </ul>
+        As a donor you can:
+        <ul>
+            <li>Update your last donation date</li>
+            <li>Subscribe or unsubscribe to receiving donation emails</li>
+        </ul>
+<div class="row">
+    <div class="column" style="overflow:auto; height:400px; overflow-y:scroll;">
+        <table align="right" style=" border: 1px solid black;">
+            <tr style=" border: 1px solid black;"><td colspan="5" align="center" style="color: #fff; font-weight: bold; background-color: black;">
+                Blood Used
+            </td></tr>
+            <tr style=" border: 1px solid black;">
+                <th>Date</th>
+                <th>Venue</th>
+            </tr>
+            {% for ld in ldd%}
+                <tr>
+                    <td style=" border: 1px solid black;">{{ ld.date }}</td>
+                    <td style=" border: 1px solid black;">{{ ld.venue }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="column">
+        <form method="post" action="/donor/savedonationdate">
+            <div class="name">Update Last Donation Details</div>
+            {% csrf_token %}
+            {% for field in lastdondate %}
+                <p>
+                    {{ field.label_tag }}<br>
+                    {{ field }}
+                </p>
+            {% endfor %}
+            <button type="submit">Save Last Donation Date</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+{% endif %}
+{% endif %}
+
+{% if not request.user.is_authenticated  %}
+    You are not logged in.<br>
+    Click the <a href="/donor/login">Link</a> to login
+{% endif %}
+
+
+{% if request.user.is_staff  %}
+    You are not a Donor.<br>
+    Click the <a href="/donation_center/login">Link</a> to login as Donation Center
+{% endif %}

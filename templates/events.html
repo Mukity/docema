@@ -1,0 +1,36 @@
+{% load static %}
+<html>
+<head>
+    <title>Blood Events</title>
+    <link rel="icon" href="{%  static 'favicon.ico'%}" type="image/ico">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/events.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div id="nav">
+    <img src="{% static 'favicon.ico' %}" alt="Logo" style="width:5.5vw;">
+    <label id="title">Blood Events</label>
+</div>
+<div style="overflow:auto;height:500px; overflow-y:scroll;">
+    <table id=requests>
+        <tr>
+            <th>Poster</th>
+            <th>Details</th>
+        </tr>
+        {% for event in events%}
+        <tr>
+            <td>
+                <img src="{{ BASE_DIR }}/media/{{ event.poster }}" height="200px">
+            </td>
+            <td>
+                <label>Event Name: </label>{{ event.event_name }}<br>
+                <label>Location: </label>{{ event.location }}<br>
+                <label>Date: </label>{{ event.date }}<br>
+                <label>Start Time: </label>{{ event.time }}<br>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+body {
+    background-image: url("../../images/signup.jpg");
+    background-size: 100% auto;
+    background-position: center top;
+    background-attachment: fixed;
+    text-align: center;
+    color: white;
+}
+
+#navbar {
+    color: white;
+    font-size: 3vw;
+}
+#signup {
+    font-size: 1.75vw;
+}
+
+#donorsignup {
+    width: 50rem;
+    padding: 2.5rem;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 0.625rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+#donorsignup h2 {
+    font-size: 2.5vw;
+}
+#donorsignup label, select, button{
+    font-size: 1.5vw;
+}
+#donorsignup input {
+    font-size: 2vw;
+    text-align: center;
+}
+
+#hospitalsignup {
+    width: 25rem;
+    float: right;
+    margin-right: 15%;
+    padding: 2.5rem;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 0.625rem;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: navajowhite;
+    text-align: center;
+    position: fixed;
+}
+a{
+    color: darkcyan;
+    font-size: 1.5vw;
+}

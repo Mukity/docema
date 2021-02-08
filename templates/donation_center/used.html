@@ -1,0 +1,51 @@
+{% extends 'donation_center/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="column">
+            <form action="/donation_center/used_added" method="post" name="used" id="used">
+                BLOOD USED<br><br>
+                <label>Used ID</label><br>
+                <input type="text" name="usedID" required><br>
+                <label>Blood Group</label><br>
+                <select id="bloodgroup" name="usedBGroup">
+                    <option value="A+">A+</option>
+                    <option value="B+">B+</option>
+                    <option value="AB+">AB+</option>
+                    <option value="O+">O+</option>
+                    <option value="A-">A-</option>
+                    <option value="B-">B-</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O-">O-</option>
+                </select><br>
+                <label>Blood units taken/Used</label><br>
+                <input type="number" name="usedUnits" required><br>
+                <label>Date</label><br>
+                <input type="date" name="usedDate" required><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="column" style="overflow:auto;height:300px; overflow-y:scroll;">
+            <table align="right">
+                <tr><td colspan="5" align="center" style="color: #fff; font-weight: bold; background-color: black;">
+                   Blood Used
+                </td></tr>
+                <tr>
+                    <th>Used ID</th>
+                    <th>Units Used</th>
+                    <th>Blood Group</th>
+                    <th>Date</th>
+                </tr>
+                 {% for use in used%}
+                     <tr>
+                        <td>{{ use.used_id }}</td>
+                        <td>{{ use.units_used }}</td>
+                        <td>{{ use.blood_group }}</td>
+                        <td>{{ use.date }}</td>
+                    </tr>
+                 {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}

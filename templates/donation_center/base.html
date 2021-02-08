@@ -1,0 +1,51 @@
+{% if request.user.is_staff %}
+{% if request.user.is_authenticated  %}
+{% if message %}
+    <script language="javascript">
+        alert('{{ message }}');
+    </script>
+{% endif %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{%  static 'favicon.ico'%}" type="image/ico">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dc.css' %}">
+    <title>Donation Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<nav id="bar">
+<nav id="topbar">
+    <img src="{% static 'favicon.ico' %}" alt="Logo" style="width:5.5vw;">
+    <label>DOCEMA - DONATION CENTERS</label>
+</nav>
+<nav id="navbar">
+    <a class="nav-link" href="/donation_center">Main Page</a>
+    <a class="nav-link" href="/donation_center/donated">Blood Donated</a>
+    <a class="nav-link" href="/donation_center/used">Blood Used</a>
+    <a class="nav-link" href="/donation_center/manage_requests">Manage Requests</a>
+    <a class="nav-link" href="/donation_center/logged_out">Log out</a>
+</nav>
+</nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
+{% endif %}
+{% endif %}
+
+{% if not request.user.is_authenticated  %}
+    <h3>
+        You are not Logged In<br>
+        Click the link to <a href="/donation_center/login">Log In</a>
+    </h3>
+{% endif %}
+
+{% if request.user.is_authenticated  %}
+{% if not request.user.is_staff %}
+    Your account is not a Donation Center account.<br>
+    Click<a href="/donation_center/login"> link </a>to be redirected.
+{% endif %}
+{% endif %}

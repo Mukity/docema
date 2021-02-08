@@ -1,0 +1,27 @@
+body {
+    background-image: url("../../images/donor.png");
+    font-size: 1.75vw;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+form {
+    margin-top: 2vw;
+    text-align: center;
+    font-size: 1.5vw;
+}
+#titlebar {
+    text-align: center;
+}
+#titlebar label {
+    font-size: 3vw;
+    font-weight: bolder;
+}
+.column {
+    margin-left: 10%;
+    float: left;
+    margin-bottom: 5%;
+}
+.name {
+    font-weight: bolder;
+    font-size: 2vw;
+}

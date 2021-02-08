@@ -1,0 +1,28 @@
+label {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: 20%;
+    color: whitesmoke;
+    background-color: #5b80b2;
+}
+
+th, td {
+  padding: 0.5vw;
+}
+body {
+    background-image: url("../images/events.jpg");
+}
+#nav {
+    font-weight: bolder;
+    font-size: 4vw;
+    color: white;
+    margin-left: 20%;
+}
+#title {
+    font-size: 4vw;
+    background: #5b80b2;
+}

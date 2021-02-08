@@ -1,0 +1,55 @@
+{% extends 'donation_center/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="column">
+            <form action="/donation_center/donated_added" method="post">
+                BLOOD DONATED<br>
+                <label>Donation ID</label><br>
+                <input type="text" name="donatedID" required><br>
+                <label>Units Donated</label><br>
+                <input type="number" name="units" required><br>
+                <label>Blood Group</label><br>
+                <select id="donatedGroup" name="donatedGroup">
+                    <option value="A+">A+</option>
+                    <option value="B+">B+</option>
+                    <option value="AB+">AB+</option>
+                    <option value="O+">O+</option>
+                    <option value="A-">A-</option>
+                    <option value="B-">B-</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O-">O-</option>
+                </select><br>
+
+                <label>Date</label><br>
+                <input type="date" name="donatedDate" required><br>
+                <button type="submit">Submit Donation</button>
+            </form>
+        </div>
+        <div class="column" style="overflow:auto;height:300px; overflow-y:scroll;">
+            <table align="right">
+                <thead>
+                    <tr><td colspan="5" align="center" style="color: #fff;
+                            font-weight: bold; background-color: black;">Blood Donated</td></tr>
+                    <tr>
+                        <th>Donation ID</th>
+                        <th>Units Donated</th>
+                        <th>Blood Group</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                {% for don in donated %}
+                <tbody>
+                    <tr>
+                        <td>{{ don.donation_id }}</td>
+                        <td>{{ don.units_donated }}</td>
+                        <td>{{ don.blood_group }}</td>
+                        <td>{{ don.date }}</td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{%  endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/donor/login.css' %}">
+    <link rel="icon" href="{%  static 'favicon.ico'%}" type="image/ico">
+    <title>Donor login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<nav id="titlebar">
+        <img src="{% static 'favicon.ico' %}" alt="Logo" style="width:4vw;">
+        Donation Center Management Application
+</nav>
+<div id="login">
+    <label>DONOR LOGIN</label>
+{% if message %}
+    <script>
+        alert('{{ message }}');
+    </script>
+{% endif %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Log In</button>
+        <a href="/donor/signup">Do not have an account?</a>
+    </form>
+</div>
+<footer>DOCEMA &copy2020</footer>
+</body>
+</html>
