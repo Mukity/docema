@@ -1,4 +1,4 @@
-# docema
+# DOCEMA
 # On the design
 - This is a python Django web application.
 - It uses the PosgreSQL database.
