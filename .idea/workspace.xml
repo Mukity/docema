@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="766d227c-1abf-41f4-a0e6-9e4391c1be69" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/donor/migrations/0002_auto_20210223_0837.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donor/migrations/0003_donor_email.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docema/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/docema/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/donation_center/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/donation_center/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/donor/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/donor/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/donor/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/donor/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/donor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/donor/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/21_august_66jrcY5.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/media/images/21_august_AWEElOT.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/21_august_UbJKlDj.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/21_august_xOPvaVA.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/21_august_xOPvaVA_WzCemYA.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/21_august_zCJpbkK.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/donation_center/dc.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/donation_center/dc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/donor/donor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/donor/donor.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="d1938085-4f1d-4dee-811c-2ca02de33cbf" />
+  <component name="ProjectId" id="1oWjTBrA6A8BCjMEmcjg32oJGzA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/donation_center" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="docema" type="Python.DjangoServer" factoryName="Django server">
+      <module name="docema" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="docema.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="766d227c-1abf-41f4-a0e6-9e4391c1be69" name="Default Changelist" comment="" />
+      <created>1613409268367</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1613409268367</updated>
+      <workItem from="1613409276986" duration="119000" />
+      <workItem from="1614070493935" duration="7076000" />
+      <workItem from="1614230597663" duration="1367000" />
+      <workItem from="1614235360932" duration="1308000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="141" y="57" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614076159460">
+      <screen x="0" y="26" width="1366" height="742" />
+    </state>
+    <state x="141" y="57" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.26.1366.742@0.26.1366.742" timestamp="1614076159460" />
+    <state width="1320" height="207" key="GridCell.Tab.0.bottom" timestamp="1614250712090">
+      <screen x="0" y="26" width="1366" height="742" />
+    </state>
+    <state width="1320" height="207" key="GridCell.Tab.0.bottom/0.26.1366.742@0.26.1366.742" timestamp="1614250712090" />
+    <state width="1320" height="207" key="GridCell.Tab.0.center" timestamp="1614250712090">
+      <screen x="0" y="26" width="1366" height="742" />
+    </state>
+    <state width="1320" height="207" key="GridCell.Tab.0.center/0.26.1366.742@0.26.1366.742" timestamp="1614250712090" />
+    <state width="1320" height="207" key="GridCell.Tab.0.left" timestamp="1614250712090">
+      <screen x="0" y="26" width="1366" height="742" />
+    </state>
+    <state width="1320" height="207" key="GridCell.Tab.0.left/0.26.1366.742@0.26.1366.742" timestamp="1614250712090" />
+    <state width="1320" height="207" key="GridCell.Tab.0.right" timestamp="1614250712090">
+      <screen x="0" y="26" width="1366" height="742" />
+    </state>
+    <state width="1320" height="207" key="GridCell.Tab.0.right/0.26.1366.742@0.26.1366.742" timestamp="1614250712090" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1614076248161">
+      <screen x="0" y="26" width="1366" height="742" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.26.1366.742@0.26.1366.742" timestamp="1614076248161" />
+  </component>
+</project>

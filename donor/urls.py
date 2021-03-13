@@ -7,4 +7,5 @@ urlpatterns = [
     path('signup', views.signup),
     path('', views.home),
     path('savedonationdate', views.savedonationdate),
+    path('updatesubscription', views.savesubscriptionstate),
 ]

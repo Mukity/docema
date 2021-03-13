@@ -13,8 +13,6 @@ from donor.models import Donor
 from docema import settings
 
 
-
-
 @csrf_exempt
 def signup(request):
     if request.method == 'POST':
@@ -38,7 +36,7 @@ def signup(request):
     return render(request, 'donation_center/sign_up.html', {'form': form})
 
 
-def dc(request):
+def bloodcalculations(request):
     user = request.user
     Bused = BloodUsed.objects.filter(dc_id=user).aggregate(Sum('units_used'))
     Bused = list(Bused.values())
@@ -56,14 +54,28 @@ def dc(request):
     Bdonated = Bdonated[0]
 
     try:
-        remaining = Bdonated-Bused
+        remaining = Bdonated - Bused
     except:
-        remaining =0
+        remaining = 0
 
     try:
-        percentage_used = Bused/remaining*100
+        percentage_used = (Bused-remaining)/ Bused * 100
     except:
         percentage_used = 0
+
+    array = [Bused, Bdonated,Brequest,Trequest,remaining,percentage_used]
+    return array
+
+
+def dc(request):
+    blood = bloodcalculations(request)
+    Bused = blood[0]
+    Bdonated = blood[1]
+    Brequest = blood[2]
+    Trequest = blood[3]
+    remaining = blood[4]
+    percentage_used = blood[5]
+    print(percentage_used)
 
     form = EventForm()
     return render(request, 'donation_center/dc.html',
@@ -113,7 +125,7 @@ def login(request):
 
 def donated_view(request):
     donated = BloodDonated.objects.all().order_by('-date').filter(dc_id=request.user.username)
-    return render(request, 'donation_center/donated.html', { "donated":donated })
+    return render(request, 'donation_center/donated.html', {"donated": donated})
 
 
 @csrf_exempt
@@ -164,7 +176,7 @@ def change_state(request):
 
 def used_view(request):
     used = BloodUsed.objects.all().order_by('-date').filter(dc_id=request.user.username)
-    return render(request, 'donation_center/used.html', { "used": used })
+    return render(request, 'donation_center/used.html', {"used": used})
 
 
 @csrf_exempt
@@ -184,28 +196,41 @@ def add_used(request):
 def send_email_to_donor(request):
     donors = Donor.objects.filter(subscribe=True)
 
-    user =request.user.username
+    user = request.user.username
     dc_name = Profile.objects.filter(username=user)
 
     for name in dc_name:
-        dc = name.donation_center
+        dc_name = name.donation_center
         contact = name.contact
         location = name.location
         county = name.county
 
     recipient_list = []
     for donor in donors:
+        donor_name = donor.username
         email = donor.email
         recipient_list.append(email)
 
     form = EventForm(request.POST, request.FILES)
     subject = "Urgent Blood Donor Needed"
-    message = "Hello Donor,\n\n Hope this mail finds you well. We would like to request for you to donate blood or " \
-              "share the message with people you may know in you area. The donation facility is " + dc +\
-              " located at " + location + " in " + county + " county.\n You can contact them on the number " + contact + \
-              ". \n\nThank you for your response to help save a life."
+    message = "Hello " + donor_name + ",\n\n Hope this mail finds you well. We would like to request " \
+                    "for you to donate blood or  share the message with people you may know in you area. " \
+                    "The donation facility is " + dc_name + " located at " + location + " in " + county + " county." \
+                    "\n You can contact them on the number " + contact + "." \
+                    "\n\nThank you for your response to help save a life."
     email_from = settings.EMAIL_HOST_USER
 
     send_mail(subject, message, email_from, recipient_list)
+
+
+    blood = bloodcalculations(request)
+    Bused = blood[0]
+    Bdonated = blood[1]
+    Brequest = blood[2]
+    Trequest = blood[3]
+    remaining = blood[4]
+    percentage_used = blood[5]
     message = "E-mail has been send to subscribed Donors"
-    return render(request, 'donation_center/dc.html', {'form': form, 'message': message})
+    return render(request, 'donation_center/dc.html', {'form': form, 'message': message, 'used':Bused,
+                                                'donated': Bdonated, 'Trequest': Trequest, 'Brequest': Brequest,
+                                                'remaining': remaining, 'percentage_used': percentage_used})

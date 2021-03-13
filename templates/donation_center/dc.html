@@ -25,7 +25,7 @@
             <td>{{ Trequest }}</td>
         </tr>
     </table>
-    {% if percentage_used < 80 %}
+    {% if percentage_used > 80 %}
         <a href="/donation_center/send_broadcast_email"><button>Send E-mails Requesting for Blood Donations</button></a>
     {% endif %}
     <p>This is the Donation Center view where you can work on different hospital functions.</p>
@@ -48,4 +48,5 @@
         {% endfor %}
         <button type="submit">Save Event Details</button>
     </form>
-{% endblock %}}
+{% endblock %}
+

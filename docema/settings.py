@@ -4,6 +4,11 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
+
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'hyj2g&-f)cbo4hb-dqq5*0&e9p-*mab74qdbllqs!0v)k4z(h1'
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 

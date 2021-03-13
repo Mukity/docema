@@ -3,7 +3,8 @@ from django.db import models
 
 class Donor(models.Model):
     boolean_choices = ((True, 'Yes'), (False, 'No'))
-    email = models.EmailField(primary_key=True)
+    username = models.CharField(max_length=100, primary_key=True)
+    email = models.EmailField()
     dob = models.DateField()
     blood_group = models.CharField(max_length=3)
     contact = models.CharField(max_length=15)

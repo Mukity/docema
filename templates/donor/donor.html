@@ -24,13 +24,13 @@
 </nav>
 Hello {{ user.username }},
 <p>You have set your subscription status to
-{% for subscription in sub %}
-    {% if subscription.subscribe == True %}
+<b>{% for subscription in sub %}
+    {% if subscription.subscribe == 'True' %}
         Yes
     {% else %}
         No
     {% endif %}
-{% endfor %}<br></p>
+{% endfor %}</b><br></p>
         <p>Thank you for choosing to be a blood donor.</p>
         <p>Did you know?</p>
         <ul>
@@ -45,6 +45,16 @@ Hello {{ user.username }},
             <li>Update your last donation date</li>
             <li>Subscribe or unsubscribe to receiving donation emails</li>
         </ul>
+<div class="subscribe">
+    <form method="post" action="/donor/updatesubscription">
+        <div class="name">Update Subscription State</div><br>
+        <select id="status" name="status">
+            <option value="True">Yes</option>
+            <option value="False">No</option>
+        </select><br><br>
+        <button type="submit">Save Subscription State</button>
+    </form>
+</div>
 <div class="row">
     <div class="column" style="overflow:auto; height:400px; overflow-y:scroll;">
         <table align="right" style=" border: 1px solid black;">
